@@ -136,7 +136,7 @@
 	color:#fff;
 	margin-bottom:0.05rem;
 	}	
-.leftMain_middle .leftMain_middle_left .leftMain_middle_leftIn .biaoge{
+.leftMain_middle .leftMain_middle_left .leftMain_middle_leftIn .chart{
 	min-height:200px;}	
 	
 .leftMain_middle .leftMain_middle_right{
@@ -154,14 +154,14 @@
 	color:#fff;
 	margin-bottom:0.05rem;
 	}	
-.leftMain_middle .leftMain_middle_right .leftMain_middle_rightIn .biaoge{
+.leftMain_middle .leftMain_middle_right .leftMain_middle_rightIn .chart{
 	min-height:200px;}	
 /*左边中间部分排行榜*/
-.leftMain_middle .leftMain_middle_right .leftMain_middle_rightIn  .biaoge_pai{
+.leftMain_middle .leftMain_middle_right .leftMain_middle_rightIn  .chart_pai{
 	width:100%;
 	overflow:hidden;
 	}
-.leftMain_middle .leftMain_middle_right .leftMain_middle_rightIn  .biaoge_pai ul li .liIn{
+.leftMain_middle .leftMain_middle_right .leftMain_middle_rightIn  .chart_pai ul li .liIn{
 	display:flex;
 	display: -webkit-flex;
 	align-items:center;
@@ -169,12 +169,12 @@
 	font-size:0.06rem;
 	height:0.18rem;
 	}
-.leftMain_middle .leftMain_middle_right .leftMain_middle_rightIn  .biaoge_pai ul li .liIn .liIn_left{
+.leftMain_middle .leftMain_middle_right .leftMain_middle_rightIn  .chart_pai ul li .liIn .liIn_left{
 	width:25%;	
 	position:relative;
 	padding-left:0.14rem;
 	}
-.leftMain_middle .leftMain_middle_right .leftMain_middle_rightIn  .biaoge_pai ul li .liIn .liIn_left .bot{
+.leftMain_middle .leftMain_middle_right .leftMain_middle_rightIn  .chart_pai ul li .liIn .liIn_left .bot{
 	width:0.08rem;
 	height:0.08rem;
 	background:#f78cf3;
@@ -186,43 +186,43 @@
 	bottom:0;
 	margin:auto 0;
 	}
-.leftMain_middle .leftMain_middle_right .leftMain_middle_rightIn  .biaoge_pai ul li .liIn2 .liIn_left .bot{
+.leftMain_middle .leftMain_middle_right .leftMain_middle_rightIn  .chart_pai ul li .liIn2 .liIn_left .bot{
 	background:#e7feb8;}
-.leftMain_middle .leftMain_middle_right .leftMain_middle_rightIn  .biaoge_pai ul li .liIn3 .liIn_left .bot{
+.leftMain_middle .leftMain_middle_right .leftMain_middle_rightIn  .chart_pai ul li .liIn3 .liIn_left .bot{
 	background:#fdea8a;}
-.leftMain_middle .leftMain_middle_right .leftMain_middle_rightIn  .biaoge_pai ul li .liIn4 .liIn_left .bot{
+.leftMain_middle .leftMain_middle_right .leftMain_middle_rightIn  .chart_pai ul li .liIn4 .liIn_left .bot{
 	background:#8ff9f8;}
-.leftMain_middle .leftMain_middle_right .leftMain_middle_rightIn  .biaoge_pai ul li .liIn5 .liIn_left .bot{
+.leftMain_middle .leftMain_middle_right .leftMain_middle_rightIn  .chart_pai ul li .liIn5 .liIn_left .bot{
 	background:#d890fa;}
-.leftMain_middle .leftMain_middle_right .leftMain_middle_rightIn  .biaoge_pai ul li .liIn6 .liIn_left .bot{
+.leftMain_middle .leftMain_middle_right .leftMain_middle_rightIn  .chart_pai ul li .liIn6 .liIn_left .bot{
 	background:#05d1fc;}
-.leftMain_middle .leftMain_middle_right .leftMain_middle_rightIn  .biaoge_pai ul li .liIn .liIn_left zi{
+.leftMain_middle .leftMain_middle_right .leftMain_middle_rightIn  .chart_pai ul li .liIn .liIn_left zi{
 	}
-.leftMain_middle .leftMain_middle_right .leftMain_middle_rightIn  .biaoge_pai ul li .liIn .liIn_line{
+.leftMain_middle .leftMain_middle_right .leftMain_middle_rightIn  .chart_pai ul li .liIn .liIn_line{
 	width:58%;
 	height:0.08rem;
 	background:rgba(255,255,255,0.5);
 	border-radius:2000px;}
-.leftMain_middle .leftMain_middle_right .leftMain_middle_rightIn  .biaoge_pai ul li .liIn .liIn_line .line_lineIn{
+.leftMain_middle .leftMain_middle_right .leftMain_middle_rightIn  .chart_pai ul li .liIn .liIn_line .line_lineIn{
 	width:100%;
 	height:0.08rem;
 	background:#f78cf3;
 	border-radius:100px;
 	-webkit-animation: widthMove1 2s ease-in-out ;} 
-.leftMain_middle .leftMain_middle_right .leftMain_middle_rightIn  .biaoge_pai ul li .liIn2 .liIn_line .line_lineIn{
+.leftMain_middle .leftMain_middle_right .leftMain_middle_rightIn  .chart_pai ul li .liIn2 .liIn_line .line_lineIn{
 	background:#e7feb8;
 	-webkit-animation: widthMove2 2s ease-in-out ;}
-.leftMain_middle .leftMain_middle_right .leftMain_middle_rightIn  .biaoge_pai ul li .liIn3 .liIn_line .line_lineIn{
+.leftMain_middle .leftMain_middle_right .leftMain_middle_rightIn  .chart_pai ul li .liIn3 .liIn_line .line_lineIn{
 	background:#fdea8a;
 	-webkit-animation: widthMove3 2s ease-in-out ;
 	}
-.leftMain_middle .leftMain_middle_right .leftMain_middle_rightIn  .biaoge_pai ul li .liIn4 .liIn_line .line_lineIn{
+.leftMain_middle .leftMain_middle_right .leftMain_middle_rightIn  .chart_pai ul li .liIn4 .liIn_line .line_lineIn{
 	background:#8ff9f8;
 	-webkit-animation: widthMove4 2s ease-in-out ;}
-.leftMain_middle .leftMain_middle_right .leftMain_middle_rightIn  .biaoge_pai ul li .liIn5 .liIn_line .line_lineIn{
+.leftMain_middle .leftMain_middle_right .leftMain_middle_rightIn  .chart_pai ul li .liIn5 .liIn_line .line_lineIn{
 	background:#d890fa;
 	-webkit-animation: widthMove5 2s ease-in-out ;}
-.leftMain_middle .leftMain_middle_right .leftMain_middle_rightIn  .biaoge_pai ul li .liIn6 .liIn_line .line_lineIn{
+.leftMain_middle .leftMain_middle_right .leftMain_middle_rightIn  .chart_pai ul li .liIn6 .liIn_line .line_lineIn{
 	background:#05d1fc;
 	-webkit-animation: widthMove6 2s ease-in-out ;}
 @-webkit-keyframes widthMove1 { 
@@ -250,28 +250,28 @@
 	 100% { width:10.5%; }
 	 }
 
-.leftMain_middle .leftMain_middle_right .leftMain_middle_rightIn  .biaoge_pai ul li .liIn .num{
+.leftMain_middle .leftMain_middle_right .leftMain_middle_rightIn  .chart_pai ul li .liIn .num{
 	width:17%;
 	font-family:dig;
 	padding-left:0.02rem;}
 /*左边底部*/
-.leftMain_middle .leftMain_middle_right .leftMain_middle_rightIn .biaoge_bi ul{
+.leftMain_middle .leftMain_middle_right .leftMain_middle_rightIn .chart_bi ul{
 	display:flex;
 	display: -webkit-flex;
 	flex-wrap:wrap;
 	width:100%;
 	}	
-.leftMain_middle .leftMain_middle_right .leftMain_middle_rightIn .biaoge_bi ul li{
+.leftMain_middle .leftMain_middle_right .leftMain_middle_rightIn .chart_bi ul li{
 	width:33.3%;
 	text-align:center;
 	margin-bottom:0.05rem;}
-.leftMain_middle .leftMain_middle_right .leftMain_middle_rightIn .biaoge_bi ul li .shu{
+.leftMain_middle .leftMain_middle_right .leftMain_middle_rightIn .chart_bi ul li .shu{
 	font-size:0.14rem;
 	color:rgba(14,253,255,1);
 	font-family:dig;
 	padding:0.12rem 0 0.02rem;
 	font-weight:normal;}	
-.leftMain_middle .leftMain_middle_right .leftMain_middle_rightIn .biaoge_bi ul li .zi{
+.leftMain_middle .leftMain_middle_right .leftMain_middle_rightIn .chart_bi ul li .zi{
 	font-size:0.06rem;
 	color:#fff;}	
 /*右边部分*/	
@@ -333,27 +333,27 @@
     }
 }
 
-.rightMain .rightMain_bottomIn .biaoge_list ul{
+.rightMain .rightMain_bottomIn .chart_list ul{
 	display:flex;
 	display: -webkit-flex;
 	width:100%;
 	}	
-.rightMain .rightMain_bottomIn .biaoge_list .ul_title{
+.rightMain .rightMain_bottomIn .chart_list .ul_title{
 	background: linear-gradient(left, rgba(255,255,255,0.1), rgba(255,255,255,0.5), rgba(255,255,255,0.1));
         background: -ms-linear-gradient(left, rgba(255,255,255,0.1), rgba(255,255,255,0.5), rgba(255,255,255,0.1));
         background: -webkit-linear-gradient(left, rgba(255,255,255,0.1), rgba(255,255,255,0.5), rgba(255,255,255,0.1));
         background: -moz-linear-gradient(left, rgba(255,255,255,0.1), rgba(255,255,255,0.5), rgba(255,255,255,0.1));
 }
-.rightMain .rightMain_bottomIn .biaoge_list .ul_con{
+.rightMain .rightMain_bottomIn .chart_list .ul_con{
 	border-bottom:0.008rem solid rgba(14,253,255,0.5);}
-.rightMain .rightMain_bottomIn .biaoge_list ul li{
+.rightMain .rightMain_bottomIn .chart_list ul li{
 	width:20%;
 	text-align:center;
 	color:#fff;
 	font-size:0.06rem;
 	height:0.2rem;
 	line-height:0.2rem;}
-.rightMain .rightMain_bottomIn .biaoge_list ul li:frist-child{
+.rightMain .rightMain_bottomIn .chart_list ul li:frist-child{
 	text-align:left;}	
 	
 	

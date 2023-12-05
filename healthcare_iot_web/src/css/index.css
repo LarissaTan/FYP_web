@@ -29,7 +29,6 @@
 	width:0.37rem;
 	height:0.05rem;
 	display:block;
-	background:#29292f url(../images/title_left_bg.png) no-repeat;
 	background-size:cover;}
 .border_bg_rightTop{
 	position:absolute;
@@ -56,7 +55,6 @@
 	width:0.08rem;
 	height:0.08rem;
 	display:block;
-	background:url(../images/title_right_bg.png) no-repeat;
 	background-size:cover;}	
 	
 .leftMain{
@@ -353,7 +351,7 @@
 	font-size:0.06rem;
 	height:0.2rem;
 	line-height:0.2rem;}
-.rightMain .rightMain_bottomIn .chart_list ul li:frist-child{
+.rightMain .rightMain_bottomIn .chart_list ul{
 	text-align:left;}	
 	
 	

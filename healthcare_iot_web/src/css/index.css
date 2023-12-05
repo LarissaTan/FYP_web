@@ -8,18 +8,10 @@
     background-size: cover;
     background-color: #ecf4eb;
 }
-/*
-background-color:  29292f
 
-	.conIn{
-	display:flex;
-	display: -webkit-flex;}
-
-	rgba(14,253,255,1) a0c69d
-	*/
 .title{
 	width:100%;
-	font-size:0.12rem;
+	font-size:0.15rem;
 	line-height:0.3rem;
 	color: #a0c69d;
 	text-align:center;
@@ -42,7 +34,7 @@ background-color:  29292f
 
 .leftMain_top ul li .liIn h3{
 	font-size:0.08rem;
-	color:#fff;
+	color:#809e7e;
 	margin-bottom:0.05rem;
 	}	
 	
@@ -57,7 +49,7 @@ background-color:  29292f
 	font-style:normal;}
 .liIn .zi{
 	font-size:0.04rem;
-	color:#fff;
+	color:#809e7e;
 	position:relative;
 	z-index:10;}	
 .liIn .zi .span1{
@@ -85,7 +77,7 @@ rgba(14,253,255,0.5)  c6ddc4*/
 
 .leftMain_middle .leftMain_middle_left .leftMain_middle_leftIn h3{
 	font-size:0.08rem;
-	color:#fff;
+	color:#809e7e;
 	margin-bottom:0.05rem;
 	}	
 .leftMain_middle .leftMain_middle_left .leftMain_middle_leftIn .chart{
@@ -103,34 +95,11 @@ rgba(14,253,255,0.5)  c6ddc4*/
 	}	
 .leftMain_middle .leftMain_middle_right .leftMain_middle_rightIn h3{
 	font-size:0.08rem;
-	color:#fff;
+	color:#809e7e;
 	margin-bottom:0.05rem;
 	}	
 .leftMain_middle .leftMain_middle_right .leftMain_middle_rightIn .chart{
-	min-height:200px;}	
-/*左边中间部分排行榜*/
-.leftMain_middle .leftMain_middle_right .leftMain_middle_rightIn  .chart_pai{
-	width:100%;
-	overflow:hidden;
-	}
-.leftMain_middle .leftMain_middle_right .leftMain_middle_rightIn  .chart_pai ul li .liIn{
-	display:flex;
-	display: -webkit-flex;
-	align-items:center;
-	color:#fff;
-	font-size:0.06rem;
-	height:0.18rem;
-	}
-.leftMain_middle .leftMain_middle_right .leftMain_middle_rightIn  .chart_pai ul li .liIn .liIn_left{
-	width:25%;	
-	position:relative;
-	padding-left:0.14rem;
-	}
-
-.leftMain_middle .leftMain_middle_right .leftMain_middle_rightIn  .chart_pai ul li .liIn .num{
-	width:17%;
-	font-family:dig;
-	padding-left:0.02rem;}
+	min-height:200px;}
 /*左边底部*/
 .leftMain_middle .leftMain_middle_right .leftMain_middle_rightIn .chart_bi ul{
 	display:flex;
@@ -149,44 +118,8 @@ rgba(14,253,255,0.5)  c6ddc4*/
 	padding:0.12rem 0 0.02rem;
 	font-weight:normal;}	
 .leftMain_middle .leftMain_middle_right .leftMain_middle_rightIn .chart_bi ul li .zi{
-	font-size:0.06rem;
-	color:#fff;}	
-/*右边部分*/	
-.rightMain .rightMain_top{
-	width:100%;
-	padding-bottom:0.1rem;
-	}		
-.rightMain .rightMain_topIn{
-	border:0.008rem solid #c6ddc4;
-	width:100%;
-	min-height:60px;
-	position:relative;
-	padding:0.08rem 0.05rem;
-	}	
-.rightMain .rightMain_topIn h3{
 	font-size:0.08rem;
-	color:#fff;
-	margin-bottom:0.05rem;
-	}	
-.rightMain .rightMain_topIn .biaoge{
-	min-height:200px;}	
-	
-.rightMain .rightMain_bottom{
-	width:100%;
-	}		
-.rightMain .rightMain_bottomIn{
-	border:0.008rem solid #c6ddc4;
-	width:100%;
-	min-height:60px;
-	position:relative;
-	padding:0.08rem 0.05rem;
-	}	
-.rightMain .rightMain_bottomIn h3{
-	font-size:0.08rem;
-	color:#fff;
-	margin-bottom:0.05rem;
-	}	
+	color:#a0c69d;}
 
-	
 	
 	

@@ -6,8 +6,6 @@
     min-height: 100vh;
     background-repeat: no-repeat;
     background-size: cover;
-    padding-top: 0rem;
-    padding: 0rem 0.2rem;
     background-color: #29292f;
 }
 /*.conIn{
@@ -48,21 +46,21 @@
 	margin-bottom:0.05rem;
 	}	
 	
-.leftMain_top ul li .liIn .shu{
+.liIn .shu{
 	font-size:0.12rem;
 	color:rgba(14,253,255,1);
 	font-family:dig;
 	margin-bottom:0.02rem;}	
-.leftMain_top ul li .liIn .shu i{
+.liIn .shu i{
 	font-size:0.04rem;
 	margin-left:0.06rem;
 	font-style:normal;}
-.leftMain_top ul li .liIn .zi{
+.liIn .zi{
 	font-size:0.04rem;
 	color:#fff;
 	position:relative;
 	z-index:10;}	
-.leftMain_top ul li .liIn .zi .span1{
+.liIn .zi .span1{
 	margin-right:0.1rem;}	
 	
 	
@@ -125,26 +123,10 @@
 	position:relative;
 	padding-left:0.14rem;
 	}
-.leftMain_middle .leftMain_middle_right .leftMain_middle_rightIn  .chart_pai ul li .liIn .liIn_left{
-	width:0.08rem;
-	height:0.08rem;
-	background:#f78cf3;
-	border-radius:1000px;
-	display:block;
-	position:absolute;
-	left:0.02rem;
-	top:0;
-	bottom:0;
-	margin:auto 0;
-	}
-.leftMain_middle .leftMain_middle_right .leftMain_middle_rightIn  .chart_pai ul li .liIn2 .liIn_left{
-	background:#e7feb8;}
-.leftMain_middle .leftMain_middle_right .leftMain_middle_rightIn  .chart_pai ul li .liIn3 .liIn_left{
-	background:#fdea8a;}
+
+
 .leftMain_middle .leftMain_middle_right .leftMain_middle_rightIn  .chart_pai ul li .liIn4 .liIn_left{
 	background:#8ff9f8;}
-.leftMain_middle .leftMain_middle_right .leftMain_middle_rightIn  .chart_pai ul li .liIn5 .liIn_left{
-	background:#d890fa;}
 .leftMain_middle .leftMain_middle_right .leftMain_middle_rightIn  .chart_pai ul li .liIn6 .liIn_left{
 	background:#05d1fc;}
 .leftMain_middle .leftMain_middle_right .leftMain_middle_rightIn  .chart_pai ul li .liIn .liIn_left zi{

@@ -128,20 +128,6 @@ a{
   margin:150px auto 0;
 }
 
-.nodate3 .goto{
-  display:block;
-  width:120px;
-  height:40px;
-  background:none;
-  border:1px solid #f06000;
-  border-radius:5px;
-  color:#f06000;
-  font-size:16px;
-  font-family:"微软雅黑";
-  text-align:center;
-  margin:20px auto;
-  line-height:38px;}
-
 body .spinner-android{
 	display:none;}
 

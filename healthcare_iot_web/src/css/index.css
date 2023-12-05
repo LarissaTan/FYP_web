@@ -21,42 +21,7 @@
 	text-align:center;
 	font-weight:bold;
 	}	
-	
-.border_bg_leftTop{
-	position:absolute;
-	left:-0.008rem;
-	top:-0.04rem;
-	width:0.37rem;
-	height:0.05rem;
-	display:block;
-	background-size:cover;}
-.border_bg_rightTop{
-	position:absolute;
-	right:-0.01rem;
-	top:-0.01rem;
-	width:0.1rem;
-	height:0.1rem;
-	display:block;
-	
-	background-size:cover;}
-.border_bg_leftBottom{
-	position:absolute;
-	left:-0.008rem;
-	bottom:-0.008rem;
-	width:0.1rem;
-	height:0.1rem;
-	display:block;
-	
-	background-size:cover;}
-.border_bg_rightBottom{
-	position:absolute;
-	right:-0.01rem;
-	bottom:-0.01rem;
-	width:0.08rem;
-	height:0.08rem;
-	display:block;
-	background-size:cover;}	
-	
+
 .leftMain{
 	width:75%;
 	float:left;

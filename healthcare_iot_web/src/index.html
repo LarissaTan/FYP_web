@@ -29,7 +29,7 @@
     <div class="leftMain_middle">
         	<div class="leftMain_middle_left">
             	<div class="leftMain_middle_leftIn">
-                	<h3>ECG Sensors</h3>
+                	<h3 style="padding-left: 30px; padding-top: 20px;">ECG Sensors</h3>
                     <!-- 为ECharts准备一个具备大小（宽高）的Dom -->
                     <div class="biaoge" style="width:100%; height:25vh" id="chartmain"></div>
                     <script type="text/javascript">
@@ -81,7 +81,7 @@
 									},
 									yAxis: {
 										type: 'value',
-										name: '单位：元',
+										name: 'Unit：BMP',
 										axisLine: {
 											show: true,
 											symbol: ['none', 'arrow'],
@@ -171,23 +171,22 @@
             </div>
         	<div class="leftMain_middle_right">
             	<div class="leftMain_middle_rightIn">
-                	<h3>这里是标题</h3>
+                	<h3 style="padding-left: 30px; padding-top: 20px;">Most Recent Data</h3>
                     <div class="biaoge biaoge_bi" style="width:100%; height:25vh">
                         <ul>
                             <li>
                                 <div class="liIn">
                                     <p class="shu shu1">23</p>
-                                    <p class="zi">今日收益比例</p>
+                                    <p class="zi">ECG data</p>
                                 </div>
                             </li>
                             <li>
                                 <div class="liIn">
                                     <p class="shu shu2">107</p>
-                                    <p class="zi">本月收益比例</p>
+                                    <p class="zi">Pulse Rate Data</p>
                                 </div>
                             </li>
                         </ul>
-
                     </div>
                     <span class="border_bg_leftTop"></span>
                     <span class="border_bg_rightTop"></span>
@@ -199,7 +198,7 @@
         <div class="leftMain_middle">
         	<div class="leftMain_middle_left">
             	<div class="leftMain_middle_leftIn">
-                	<h3>这里是标题</h3>
+                	<h3 style="padding-left: 30px; padding-top: 20px;">Pulse Rate Data</h3>
                     <div class="biaoge" style="width:100%; height:25vh" id="chartmain_zhe"></div>
                     <script type="text/javascript">
 					//window.onload = function (){
@@ -218,13 +217,11 @@
 								fontSize: 12,
 							},
 							right:'10%',
-							data: ['折线一', '折线二']
+							data: ['Your recent data']
 						},
 						grid:{
 								x:40,
 								y:40,
-								x2:20,
-								y2:20,
 							},
 						toolbox: {
 							feature: {
@@ -255,7 +252,7 @@
 												color: '#fff',
 											}
 										},
-							data: ['00:00', '02:00', '04:00', '06:00', '08:00', '10:00', '12:00']
+							data: ['1', '2', '3', '4', '5', '6', '7']
 						},
 						yAxis: {
 							type: 'value',
@@ -280,9 +277,9 @@
 						},
 						series: [
 							{
-								name: '折线一',
+								name: 'Unit:BMP',
 								type: 'line',
-								stack: '总量',
+								stack: 'total',
 								data: [280, 102, 191, 134, 390, 230, 210],
 								itemStyle: {
 									 normal: {
@@ -293,12 +290,6 @@
 									  }
 									},
 								}
-							},
-							{
-								name: '折线二',
-								type: 'line',
-								stack: '总量',
-								data: [100, 132, 131, 234, 290, 330, 110]
 							},
 						]
 					};		
@@ -320,7 +311,6 @@
     </div>
 
     <div style="clear:both;"></div>
-
 
 </body>
 </html>

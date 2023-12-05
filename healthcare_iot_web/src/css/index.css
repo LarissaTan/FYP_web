@@ -20,20 +20,8 @@
 	color:rgba(14,253,255,1);
 	text-align:center;
 	font-weight:bold;
-	}	
+	}
 
-.leftMain{
-	width:75%;
-	float:left;
-	padding-right:0.1rem;
-	padding-top:0.1rem;
-	}	
-	
-.rightMain{
-	width:25%;
-	float:left;
-	padding-top:0.1rem;}	
-	
 .leftMain_top{
 	width:100%;
 	padding-bottom:0.1rem;}	
@@ -149,15 +137,15 @@
 	bottom:0;
 	margin:auto 0;
 	}
-.leftMain_middle .leftMain_middle_right .leftMain_middle_rightIn  .chart_pai ul li .liIn2 .liIn_left .bot{
+.leftMain_middle .leftMain_middle_right .leftMain_middle_rightIn  .chart_pai ul li .liIn2 .liIn_left{
 	background:#e7feb8;}
-.leftMain_middle .leftMain_middle_right .leftMain_middle_rightIn  .chart_pai ul li .liIn3 .liIn_left .bot{
+.leftMain_middle .leftMain_middle_right .leftMain_middle_rightIn  .chart_pai ul li .liIn3 .liIn_left{
 	background:#fdea8a;}
-.leftMain_middle .leftMain_middle_right .leftMain_middle_rightIn  .chart_pai ul li .liIn4 .liIn_left .bot{
+.leftMain_middle .leftMain_middle_right .leftMain_middle_rightIn  .chart_pai ul li .liIn4 .liIn_left{
 	background:#8ff9f8;}
-.leftMain_middle .leftMain_middle_right .leftMain_middle_rightIn  .chart_pai ul li .liIn5 .liIn_left .bot{
+.leftMain_middle .leftMain_middle_right .leftMain_middle_rightIn  .chart_pai ul li .liIn5 .liIn_left{
 	background:#d890fa;}
-.leftMain_middle .leftMain_middle_right .leftMain_middle_rightIn  .chart_pai ul li .liIn6 .liIn_left .bot{
+.leftMain_middle .leftMain_middle_right .leftMain_middle_rightIn  .chart_pai ul li .liIn6 .liIn_left{
 	background:#05d1fc;}
 .leftMain_middle .leftMain_middle_right .leftMain_middle_rightIn  .chart_pai ul li .liIn .liIn_left zi{
 	}
@@ -166,25 +154,10 @@
 	height:0.08rem;
 	background:rgba(255,255,255,0.5);
 	border-radius:2000px;}
-.leftMain_middle .leftMain_middle_right .leftMain_middle_rightIn  .chart_pai ul li .liIn .liIn_line .line_lineIn{
-	width:100%;
-	height:0.08rem;
-	background:#f78cf3;
-	border-radius:100px;
-	-webkit-animation: widthMove1 2s ease-in-out ;} 
-.leftMain_middle .leftMain_middle_right .leftMain_middle_rightIn  .chart_pai ul li .liIn2 .liIn_line .line_lineIn{
-	background:#e7feb8;
-	-webkit-animation: widthMove2 2s ease-in-out ;}
-.leftMain_middle .leftMain_middle_right .leftMain_middle_rightIn  .chart_pai ul li .liIn3 .liIn_line .line_lineIn{
-	background:#fdea8a;
-	-webkit-animation: widthMove3 2s ease-in-out ;
-	}
+
 .leftMain_middle .leftMain_middle_right .leftMain_middle_rightIn  .chart_pai ul li .liIn4 .liIn_line .line_lineIn{
 	background:#8ff9f8;
 	-webkit-animation: widthMove4 2s ease-in-out ;}
-.leftMain_middle .leftMain_middle_right .leftMain_middle_rightIn  .chart_pai ul li .liIn5 .liIn_line .line_lineIn{
-	background:#d890fa;
-	-webkit-animation: widthMove5 2s ease-in-out ;}
 .leftMain_middle .leftMain_middle_right .leftMain_middle_rightIn  .chart_pai ul li .liIn6 .liIn_line .line_lineIn{
 	background:#05d1fc;
 	-webkit-animation: widthMove6 2s ease-in-out ;}

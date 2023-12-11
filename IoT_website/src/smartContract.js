@@ -98,16 +98,20 @@ var contract = new web3.eth.Contract(contractABI, contractAddress);
 
 // Define the function to get all messages
 function getAllMessages() {
-    return contract.methods.getAllMessages().call();
+    console.log("Calling getAllMessages");
+    return contract.methods.getLastMessage().call()
 }
 
 
 window.onload = function() {
+
     try {
         var messages = getAllMessages();
+        console.log(messages);
         document.getElementById('out1').innerText = "All Messages: " + JSON.stringify(messages);
     } catch (error) {
         document.getElementById('out1').innerText = "Error: " + error;
     }
+
 };
 

@@ -20,6 +20,13 @@
             <artifactId>core</artifactId>
             <version>4.10.1</version>
         </dependency>
+
+        <dependency>
+            <groupId>org.mozilla</groupId>
+            <artifactId>rhino</artifactId>
+            <version>1.7.14</version> <!-- 版本号可能需要根据实际情况调整 -->
+        </dependency>
+
         <!-- 其他依赖项 -->
     </dependencies>
 

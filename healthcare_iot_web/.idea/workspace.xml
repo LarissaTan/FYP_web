@@ -2,9 +2,33 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="90c5cdec-36ac-406d-b882-7314aea8a4d9" name="变更" comment="">
-      <change afterPath="$PROJECT_DIR$/src/css/bubbly.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../IoT_website/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../IoT_website/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../IoT_website/.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../IoT_website/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../IoT_website/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../IoT_website/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../IoT_website/src/css/bubbly.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../IoT_website/src/css/index.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../IoT_website/src/css/public.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../IoT_website/src/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../IoT_website/src/js/echarts.all.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../IoT_website/src/js/jquery.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../IoT_website/src/js/jquery.numscroll.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../IoT_website/src/main/java/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../IoT_website/src/main/java/getData.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../IoT_website/src/smartContract.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/getData.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/smartContract.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../untitled/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../untitled/untitled.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/healthcare_iot_web/css/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/healthcare_iot_web/css/index.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/healthcare_iot_web/css/public.css" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/healthcare_iot_web/css/public.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/healthcare_iot_web/image/title_border_bg.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/healthcare_iot_web/image/title_left_bg.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/healthcare_iot_web/image/title_right_bg.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/healthcare_iot_web/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/healthcare_iot_web/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -15,12 +39,18 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="CSS File" />
+        <option value="Interface" />
         <option value="JavaScript File" />
+        <option value="Class" />
+        <option value="Tag Library Descriptor" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="2Z6y3wHUJPdASNsbvp5MFihKcof" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -30,17 +60,36 @@
     <option name="showMembers" value="true" />
     <option name="sortByType" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "list.type.of.created.stylesheet": "CSS"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;SDK&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.25172412&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;MavenSettings&quot;
   }
-}]]></component>
-  <component name="RunManager" selected="JavaScript 调试.index.html">
+}</component>
+  <component name="RunManager" selected="应用程序.getData">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
+      <module name="healthcare_iot_web" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="YourJavaFile" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="YourJavaFile" />
+      <module name="healthcare_iot_web" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="getData" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="getData" />
       <module name="healthcare_iot_web" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -51,6 +100,8 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="应用程序.getData" />
+        <item itemvalue="应用程序.YourJavaFile" />
         <item itemvalue="JavaScript 调试.index.html" />
         <item itemvalue="应用程序.Main" />
       </list>
@@ -65,8 +116,13 @@
       <option name="presentableId" value="Default" />
       <updated>1701756629596</updated>
       <workItem from="1701756632292" duration="2000" />
+      <workItem from="1702275927205" duration="2867000" />
+      <workItem from="1702279407319" duration="1380000" />
     </task>
     <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">

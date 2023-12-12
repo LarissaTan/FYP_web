@@ -156,7 +156,7 @@
                         <ul >
                             <li>
                                 <div class="liIn">
-                                    <p id = "out1" class="shu shu1">23</p>
+                                    <p id="lastMessage" class="shu shu1">23</p>
                                     <p class="zi">ECG data</p>
                                 </div>
                             </li>
@@ -284,3 +284,29 @@
 
 </body>
 </html>
+
+<script>
+	document.addEventListener("DOMContentLoaded", function () {
+		async function updateLastMessage() {
+			console.log("updateLastMessage function called");
+			
+			const response = await fetch('/get_last_message');
+			const data = await response.json();
+			
+			console.log("Received data:", data);
+
+			// Update the content of the "lastMessage" div
+			const lastMessageDiv = document.getElementById('lastMessage');
+			//lastMessageDiv = document.querySelector('#lastMessage')
+			if (lastMessageDiv) {
+				console.log("Updating lastMessageDiv");
+				lastMessageDiv.innerText = `Last Message: ${data.last_message}`;
+			}else{
+				console.log("lastMessageDiv is null");
+			}
+		}
+
+		// Call the updateLastMessage function when the page loads
+		updateLastMessage();
+	});
+</script>

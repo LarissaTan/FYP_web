@@ -1,6 +1,5 @@
 <!doctype html>
 <html>
-<head>
 <!doctype html>
 <head>
 <meta charset="utf-8">
@@ -8,21 +7,17 @@
 <meta name="keywords" content="">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 <title>Healthcare IoT System</title>
-<link type="text/css" href="css/public.css" rel="stylesheet">
-    <link type="text/css" href="css/bubbly.css" rel="stylesheet">
-<link type="text/css" href="css/index.css" rel="stylesheet">
+<link type="text/css" href="static/public.css" rel="stylesheet">
+<link type="text/css" href="static/index.css" rel="stylesheet">
 <script type="text/javascript">
         document.documentElement.style.fontSize = document.documentElement.clientWidth /768*100 + 'px';
 </script>
 
+
 <script src="https://www.jq22.com/jquery/echarts-4.2.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/web3@1.5.2/dist/web3.min.js"></script>
 </head>
-<style>
-.abc{ 
 
-}
-
-</style>
 
 <body>
 <div class="bg" style="padding:80px;">
@@ -161,7 +156,7 @@
                         <ul >
                             <li>
                                 <div class="liIn">
-                                    <p class="shu shu1">23</p>
+                                    <p id = "out1" class="shu shu1">23</p>
                                     <p class="zi">ECG data</p>
                                 </div>
                             </li>
@@ -281,9 +276,6 @@
 						//};
 					</script>
                 </div>
-            </div>
-        	<div class="leftMain_middle_right">
-                <button class="bubbly-button">Log out</button>
             </div>
         </div>
     </div>

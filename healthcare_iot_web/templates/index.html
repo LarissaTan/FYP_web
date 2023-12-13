@@ -286,7 +286,8 @@
 </html>
 
 <script>
-	document.addEventListener("DOMContentLoaded", function () {
+	window.onload = function () {
+	//document.addEventListener("DOMContentLoaded", function () {
 		async function updateLastMessage() {
 			console.log("updateLastMessage function called");
 			
@@ -300,7 +301,7 @@
 			//lastMessageDiv = document.querySelector('#lastMessage')
 			if (lastMessageDiv) {
 				console.log("Updating lastMessageDiv");
-				lastMessageDiv.innerText = `Last Message: ${data.last_message}`;
+				lastMessageDiv.innerText = data.ecg;
 			}else{
 				console.log("lastMessageDiv is null");
 			}
@@ -308,5 +309,6 @@
 
 		// Call the updateLastMessage function when the page loads
 		updateLastMessage();
-	});
+	//});
+	};
 </script>

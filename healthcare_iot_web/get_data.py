@@ -97,13 +97,49 @@ contra = web3.eth.contract(address=conadress, abi=conabi)
 # Flask 路由，与智能合约交互并在终端输出数据
 @app.route("/get_last_message")
 def get_last_message():
-    result = contra.functions.getAllMessages().call()
+    result = contra.functions.getLastMessage().call()
+    #get last message
     print(result)
     
     # 在终端输出数据
     #print("Last Message:", decrypted_message)
 
-    return jsonify({"last_message": result})
+    # 解析字符串中的数据
+    data_start_index = result.find("['")
+    data_end_index = result.find("']")
+    
+
+    if data_start_index != -1 and data_end_index != -1:
+        data_string = result[data_start_index + 2: data_end_index]
+        data_list = data_string.split("', '")
+        
+        # 输出每个元素
+        for element in data_list:
+            print(element)
+            time = element[0:19]
+            print(time)
+            ecg = element[22:27]
+            print(ecg)
+            tmp = element[29]
+            if (tmp == '-'):
+                pulse = 'null'
+            else:
+                pulse = element[29:32]
+                
+            print(pulse)
+            
+    else:
+        print("Data not found in the result string")
+    
+	# 组织成一个字典
+    response_data = {
+        "ecg": ecg,
+        "time": time,
+        "pulse": pulse
+    }
+
+
+    return jsonify(response_data)
 
 # Flask 路由，渲染 index.html 模板
 @app.route("/")

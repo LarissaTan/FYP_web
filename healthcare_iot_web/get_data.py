@@ -1,4 +1,6 @@
 from flask import Flask, render_template, request, jsonify
+from datetime import datetime
+from store_data import *
 from web3 import Web3
 
 # 创建 Flask 应用
@@ -115,28 +117,47 @@ def get_last_message():
         
         # 输出每个元素
         for element in data_list:
+            
             print(element)
             time = element[0:19]
-            print(time)
-            ecg = element[22:27]
-            print(ecg)
-            tmp = element[29]
-            if (tmp == '-'):
-                pulse = 'null'
-            else:
-                pulse = element[29:32]
-                
-            print(pulse)
+            time = datetime.strptime(time, "%Y-%m-%d %H:%M:%S")
+            tmps = read_data()
+            tmp_time = tmps[-1][0]
+            tmp_time = datetime.strptime(tmp_time, "%Y-%m-%d %H:%M:%S")
             
-    else:
-        print("Data not found in the result string")
-    
-	# 组织成一个字典
+			#忽略前面的数据，只输出和存的最新数据一样的数据
+            if time == tmp_time:
+                print(time)
+                ecg = element[22:27]
+                print(ecg)
+                tmp = element[29]
+                if (tmp == '-'):
+                        pulse = 'null'
+                else:
+                       pulse = element[29:32]
+                print(pulse)
+            
+			#比存的更新的数据
+            if time > tmp_time:
+                print(time)
+                ecg = element[22:27]
+                print(ecg)
+                tmp_write_data = element[0:19] + ";" + ecg
+                write_data(tmp_write_data)
+                tmp = element[29]
+                if (tmp == '-'):
+                        pulse = 'null'
+                else:
+                       pulse = element[29:32]
+                print(pulse)
+            
+
     response_data = {
         "ecg": ecg,
         "time": time,
         "pulse": pulse
     }
+        # 组织成一个字典
 
 
     return jsonify(response_data)

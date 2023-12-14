@@ -1,6 +1,7 @@
 from flask import Flask, render_template, request, jsonify
 from datetime import datetime
 from store_data import *
+from store_data_pulse import *
 from web3 import Web3
 
 # 创建 Flask 应用
@@ -180,6 +181,48 @@ def get_last_message():
 
 
     return jsonify(response_data)
+
+@app.route("/get_last_valid_pulse")
+def get_last_valid_pulse():
+    result = contra.functions.getLastMessage().call()
+
+    # 解析字符串中的数据
+    data_start_index = result.find("['")
+    data_end_index = result.find("']")
+    
+
+    if data_start_index != -1 and data_end_index != -1:
+        data_string = result[data_start_index + 2: data_end_index]
+        data_list = data_string.split("', '")
+        
+        # 输出每个元素
+        for element in data_list:
+            
+            print(element)
+            time = element[0:19]
+            time = datetime.strptime(time, "%Y-%m-%d %H:%M:%S")
+            tmps = read_data_pulse()
+            tmp_time = tmps[-1][0]
+            tmp_time = datetime.strptime(tmp_time, "%Y-%m-%d %H:%M:%S")
+            
+			#忽略前面的数据，只输出和存的最新数据一样的数据
+            if time == tmp_time:
+                pulse = tmps[-1][1]
+            
+			#比存的更新的数据
+            if time > tmp_time:
+                print(time)
+                ecg = element[22:27]
+                print(ecg)
+                tmp_write_data = element[0:19] + ";" + ecg
+                write_data(tmp_write_data)
+                tmp = element[29]
+                if (tmp != '-'):
+                    pulse = element[29:32]
+                    print(pulse)
+                
+    return jsonify(pulse)
+      
 
 # Flask 路由，渲染 index.html 模板
 @app.route("/")

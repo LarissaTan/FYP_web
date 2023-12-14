@@ -162,7 +162,7 @@
                             </li>
                             <li>
                                 <div class="liIn">
-                                    <p class="shu shu2">107</p>
+                                    <p id = "lastPulse" class="shu shu2">107</p>
                                     <p class="zi">Pulse Rate Data</p>
                                 </div>
                             </li>
@@ -348,16 +348,21 @@
 									});
 			
 			const response = await fetch('/get_last_message');
+			const response_pulse = await fetch('/get_last_valid_pulse');
+			const data_pulse = await response_pulse.json();
 			const data = await response.json();
 			
 			console.log("Received data:", data);
+			console.log("Received data_pulse:", data_pulse);//work
 
 			// Update the content of the "lastMessage" div
 			const lastMessageDiv = document.getElementById('lastMessage');
+			const lastPulseDiv = document.getElementById('lastPulse');
 			//lastMessageDiv = document.querySelector('#lastMessage')
 			if (lastMessageDiv) {
 				console.log("Updating lastMessageDiv");
 				lastMessageDiv.innerText = data.ecg;
+				lastPulseDiv.innerText = data_pulse;
 			}else{
 				console.log("lastMessageDiv is null");
 			}

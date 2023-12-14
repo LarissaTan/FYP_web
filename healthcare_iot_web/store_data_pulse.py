@@ -64,7 +64,7 @@ def clear_file():
     with open(file_path, 'w') as file:
         file.write('')
 
-def write_data(data):
+def write_data_pulse(data):
     # 加密文本
     encrypted_text = encrypt_text(data, init_txt())
     # 将加密后的文本写入文件
@@ -72,7 +72,7 @@ def write_data(data):
     clear_first_line(file_path)
     print(f"Encrypted Text has been written to '{file_path}'.")
 
-def read_data():
+def read_data_pulse():
     # 从文件中读取加密后的文本
     read_encrypted_texts = read_encrypted_text_from_file(file_path)
 

@@ -96,6 +96,25 @@ conabi = [
 
 contra = web3.eth.contract(address=conadress, abi=conabi)
 
+
+
+@app.route("/get_previous_ecg")
+def get_previous_ecg():
+	data = read_data()
+	data_ecg = []
+	print(data.__len__())
+	for i in data:
+		tmp_ecg_data = i[1]
+                
+		data_ecg.append(float(tmp_ecg_data))
+    
+	print(data_ecg.__len__())
+                
+	return jsonify(data_ecg)
+
+	
+
+
 # Flask 路由，与智能合约交互并在终端输出数据
 @app.route("/get_last_message")
 def get_last_message():

@@ -1,4 +1,4 @@
-from store_data import *
+from store_data_pulse import *
 from datetime import datetime
 from arima import perform_arma_prediction
 '''
@@ -7,20 +7,21 @@ data = [11, 23, 32, 43, 54, 65, 76, 87, 98, 102]
 
 print(perform_arma_prediction(data))
 '''
-write_data("2023-12-13 23:46:27;2.056")
-write_data("2023-12-13 23:46:49;1.997")
-write_data("2023-12-13 23:47:02;2.076")
-write_data("2023-12-13 23:47:26;2.238")
-write_data("2023-12-13 23:47:38;2.012")
+write_data("2023-12-13 23:45:51;106")
+write_data("2023-12-13 23:46:27;104")
+write_data("2023-12-13 23:46:49;105")
+write_data("2023-12-13 23:47:02;102")
+write_data("2023-12-13 23:47:26;102")
+write_data("2023-12-13 23:47:38;99")
 
-write_data("2023-12-13 23:48:02;2.413")
-write_data("2023-12-13 23:48:14;2.264")
-write_data("2023-12-13 23:48:39;2.716")
-write_data("2023-12-13 23:48:51;2.801")
-write_data("2023-12-13 23:49:26;2.798")
+write_data("2023-12-13 23:48:02;101")
+write_data("2023-12-13 23:48:14;107")
+write_data("2023-12-13 23:48:39;108")
+write_data("2023-12-13 23:48:51;110")
 
 
 tmps = read_data()
+print(tmps.__len__())
 #print(tmps[-1][0]) #最后新的时间获取
 
 for tmp in tmps:
@@ -61,4 +62,18 @@ for tmp in tmps:
     write_data("2023-12-13 23:48:39;2.716;108")
     write_data("2023-12-13 23:48:51;2.801;110")
     write_data("2023-12-13 23:49:26;2.798;-1")
+    '''
+
+    '''
+write_data("2023-12-13 23:45:51;106")
+write_data("2023-12-13 23:46:27;104")
+write_data("2023-12-13 23:46:49;105")
+write_data("2023-12-13 23:47:02;102")
+write_data("2023-12-13 23:47:26;102")
+write_data("2023-12-13 23:47:38;99")
+
+write_data("2023-12-13 23:48:02;101")
+write_data("2023-12-13 23:48:14;107")
+write_data("2023-12-13 23:48:39;108")
+write_data("2023-12-13 23:48:51;110")
     '''

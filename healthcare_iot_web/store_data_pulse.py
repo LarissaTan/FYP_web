@@ -1,8 +1,8 @@
 from cryptography.fernet import Fernet
 
-file_path = 'encrypted_data.txt'
+file_path = 'encrypted_pulse_data.txt'
 
-def generate_or_load_key(file_path='secret.key'):
+def generate_or_load_key(file_path='secret_pulse.key'):
     try:
         # 从文件中读取密钥
         with open(file_path, 'rb') as key_file:

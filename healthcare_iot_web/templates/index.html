@@ -25,14 +25,14 @@
     <div class="leftMain_middle">
         	<div class="leftMain_middle_left">
             	<div class="leftMain_middle_leftIn">
-                	<h3 style="padding-left: 30px; padding-top: 20px;">ECG Sensors</h3>
+                	<h3 style="padding-left: 30px; padding-top: 20px;">Pulse Rate Sensors</h3>
                     <!-- 为ECharts准备一个具备大小（宽高）的Dom -->
                     <div class="chart" style="width:90%; height:25vh" id="chartmain"></div>
                     <script type="text/javascript">
 					//window.onload = function () {
-								var dataAxis = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15'];
-								var data = [220, 182, 191, 234, 290, 330, 310, 123, 442, 321, 90, 149, 210, 122, 200];
-								var yMax = 500;
+								var dataAxis = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10'];
+								var data = [220, 182, 191, 234, 290, 330, 310, 123, 442, 321];
+								var yMax = 180;
 								var dataShadow = [];
 								
 								for (var i = 0; i < data.length; i++) {
@@ -174,11 +174,44 @@
         <div class="leftMain_middle">
         	<div class="leftMain_middle_left">
             	<div class="leftMain_middle_leftIn">
-                	<h3 style="padding-left: 30px; padding-top: 20px;">Pulse Rate Data</h3>
+                	<h3 style="padding-left: 30px; padding-top: 20px;">ECG Sensor Data</h3>
                     <div class="chart" style="width:100%; height:25vh" id="chartmain_zhe"></div>
                     <script type="text/javascript">
 					//window.onload = function (){
 								//指定图表的配置项和数据
+								var data_ecg = [];
+								/*
+								async function updateLastMessage() {
+									const response_ecg = await fetch('/get_previous_ecg');
+
+									data_ecg = await response_ecg.json();
+									console.log("Received data_ecg:", data_ecg);
+								}
+								async function updateLastMessage() {
+									const response_ecg = await fetch('/get_previous_ecg');
+									data_ecg = await response_ecg.json();
+									console.log("Received data_ecg:", data_ecg);
+
+									// 更新图表数据
+									myChart.setOption({
+										series: [{
+											name: 'Unit:BMP',
+											type: 'line',
+											stack: 'total',
+											data: data_ecg,
+											itemStyle: {
+												normal: {
+													color: "#a0c69d",
+													lineStyle: {
+														color: "#a0c69d",
+														width: 2,
+													}
+												},
+											}
+										}]
+									});
+								}*/
+									
 								
 					option = {
 						title: {
@@ -228,7 +261,7 @@
 												color: '#708b6e',
 											}
 										},
-							data: ['1', '2', '3', '4', '5', '6', '7']
+							data: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10']
 						},
 						yAxis: {
 							type: 'value',
@@ -256,7 +289,7 @@
 								name: 'Unit:BMP',
 								type: 'line',
 								stack: 'total',
-								data: [280, 102, 191, 134, 390, 230, 210],
+								data: data_ecg,
 								itemStyle: {
 									 normal: {
 									   color: "#a0c69d",//折线点的颜色
@@ -290,6 +323,29 @@
 	//document.addEventListener("DOMContentLoaded", function () {
 		async function updateLastMessage() {
 			console.log("updateLastMessage function called");
+
+			const response_ecg = await fetch('/get_previous_ecg');
+									data_ecg = await response_ecg.json();
+									console.log("Received data_ecg:", data_ecg);
+
+									// update the chart data
+									myChart.setOption({
+										series: [{
+											name: 'mV',
+											type: 'line',
+											stack: 'total',
+											data: data_ecg,
+											itemStyle: {
+												normal: {
+													color: "#a0c69d",
+													lineStyle: {
+														color: "#a0c69d",
+														width: 2,
+													}
+												},
+											}
+										}]
+									});
 			
 			const response = await fetch('/get_last_message');
 			const data = await response.json();

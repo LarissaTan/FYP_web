@@ -106,12 +106,28 @@ def get_previous_ecg():
 	print(data.__len__())
 	for i in data:
 		tmp_ecg_data = i[1]
+		print(tmp_ecg_data)
                 
 		data_ecg.append(float(tmp_ecg_data))
     
 	print(data_ecg.__len__())
                 
 	return jsonify(data_ecg)
+
+@app.route("/get_previous_pulse")
+def get_previous_pulse():
+	data = read_data_pulse()
+	data_pulse = []
+	print(data.__len__())
+	for i in data:
+		tmp_pulse_data = i[1]
+		print(tmp_pulse_data)
+                
+		data_pulse.append(int(tmp_pulse_data))
+    
+	print(data_pulse.__len__())
+                
+	return jsonify(data_pulse)
 
 	
 
@@ -164,6 +180,8 @@ def get_last_message():
                 print(ecg)
                 tmp_write_data = element[0:19] + ";" + ecg
                 write_data(tmp_write_data)
+                print("i dont why here is working")
+                print(time, "----",tmp_time)
                 tmp = element[29]
                 if (tmp == '-'):
                         pulse = 'null'
@@ -211,14 +229,10 @@ def get_last_valid_pulse():
             
 			#比存的更新的数据
             if time > tmp_time:
-                print(time)
-                ecg = element[22:27]
-                print(ecg)
-                tmp_write_data = element[0:19] + ";" + ecg
-                write_data(tmp_write_data)
                 tmp = element[29]
                 if (tmp != '-'):
                     pulse = element[29:32]
+                    write_data_pulse(pulse)
                     print(pulse)
                 
     return jsonify(pulse)

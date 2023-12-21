@@ -12,7 +12,7 @@ write_data("2023-12-21 16:02:23;1.962")
 write_data("2023-12-21 16:02:38;2.068")
 
 '''
-tmps = read_data_pulse()
+tmps = read_data()
 print(tmps.__len__())
 #print(tmps[-1][0]) #最后新的时间获取
 

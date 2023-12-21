@@ -265,8 +265,8 @@ def get_last_valid_pulse():
     # 解析字符串中的数据
     data_start_index = result.find("['")
     data_end_index = result.find("']")
+    tmp_pulse = 0
     
-
     if data_start_index != -1 and data_end_index != -1:
         data_string = result[data_start_index + 2: data_end_index]
         data_list = data_string.split("', '")
@@ -279,6 +279,7 @@ def get_last_valid_pulse():
             time = datetime.strptime(time, "%Y-%m-%d %H:%M:%S")
             tmps = read_data_pulse()
             tmp_time = tmps[-1][0]
+            tmp_pulse = tmps[-1][1]
             tmp_time = datetime.strptime(tmp_time, "%Y-%m-%d %H:%M:%S")
             
 			#忽略前面的数据，只输出和存的最新数据一样的数据
@@ -290,9 +291,12 @@ def get_last_valid_pulse():
                 tmp = element[29]
                 if (tmp != '-'):
                     pulse = element[29:32]
-                    write_data_pulse(pulse)
+                    tmp_write_data = element[0:19] + ";" + pulse
+                    write_data_pulse(tmp_write_data)
                     print(pulse)
+                    return jsonify(pulse)
                 
+    pulse = tmp_pulse
     return jsonify(pulse)
       
 

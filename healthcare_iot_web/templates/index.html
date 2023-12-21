@@ -180,37 +180,6 @@
 					//window.onload = function (){
 								//指定图表的配置项和数据
 								var data_ecg = [];
-								/*
-								async function updateLastMessage() {
-									const response_ecg = await fetch('/get_previous_ecg');
-
-									data_ecg = await response_ecg.json();
-									console.log("Received data_ecg:", data_ecg);
-								}
-								async function updateLastMessage() {
-									const response_ecg = await fetch('/get_previous_ecg');
-									data_ecg = await response_ecg.json();
-									console.log("Received data_ecg:", data_ecg);
-
-									// 更新图表数据
-									myChart.setOption({
-										series: [{
-											name: 'Unit:BMP',
-											type: 'line',
-											stack: 'total',
-											data: data_ecg,
-											itemStyle: {
-												normal: {
-													color: "#a0c69d",
-													lineStyle: {
-														color: "#a0c69d",
-														width: 2,
-													}
-												},
-											}
-										}]
-									});
-								}*/
 									
 								
 					option = {
@@ -384,23 +353,23 @@
 									});
 
 			const response = await fetch('/get_last_message');
-			/*
+			
 			const response_pulse = await fetch('/get_last_valid_pulse');
 			const data_pulse = await response_pulse.json();
-			*/
+			
 			const data = await response.json();
 			
 			console.log("Received data:", data);
-			//console.log("Received data_pulse:", data_pulse);//work
+			console.log("Received data_pulse:", data_pulse);//work
 
 			// Update the content of the "lastMessage" div
 			const lastMessageDiv = document.getElementById('lastMessage');
-			//const lastPulseDiv = document.getElementById('lastPulse');
+			const lastPulseDiv = document.getElementById('lastPulse');
 			//lastMessageDiv = document.querySelector('#lastMessage')
 			if (lastMessageDiv) {
 				console.log("Updating lastMessageDiv");
 				lastMessageDiv.innerText = data.ecg;
-				//lastPulseDiv.innerText = data_pulse;
+				lastPulseDiv.innerText = data_pulse;
 			}else{
 				console.log("lastMessageDiv is null");
 			}

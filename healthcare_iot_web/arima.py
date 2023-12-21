@@ -22,25 +22,8 @@ def perform_arma_prediction(data):
 
     # Perform ARMA prediction using the pre_interface module
     ARMA_pre, ARMA_pre_inv = pre.interface_pre(data, 3, 15, 1, 20)
-    ARMA_pres.append(ARMA_pre)
 
-    data.extend(ARMA_pre)
-    ARMA_pre, ARMA_pre_inv = pre.interface_pre(data, 3, 15, 1, 20)
-    ARMA_pres.append(ARMA_pre)
-
-    data.extend(ARMA_pre)
-    ARMA_pre, ARMA_pre_inv = pre.interface_pre(data, 3, 15, 1, 20)
-    ARMA_pres.append(ARMA_pre)
-
-    data.extend(ARMA_pre)
-    ARMA_pre, ARMA_pre_inv = pre.interface_pre(data, 3, 15, 1, 20)
-    ARMA_pres.append(ARMA_pre)
-
-    data.extend(ARMA_pre)
-    ARMA_pre, ARMA_pre_inv = pre.interface_pre(data, 3, 15, 1, 20)
-    ARMA_pres.append(ARMA_pre)
-
-    return ARMA_pres
+    return ARMA_pre
 
     # Example usage:
     # data = [75, 72, 70, 68, 75, 80, 82, 78, 80, 76]

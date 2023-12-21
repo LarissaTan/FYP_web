@@ -3,6 +3,8 @@ from datetime import datetime
 from store_data import *
 from store_data_pulse import *
 from web3 import Web3
+from arima import *
+import hashlib
 
 # 创建 Flask 应用
 app = Flask(__name__)
@@ -135,6 +137,7 @@ def get_previous_pulse():
 # Flask 路由，与智能合约交互并在终端输出数据
 @app.route("/get_last_message")
 def get_last_message():
+
     result = contra.functions.getLastMessage().call()
     #get last message
     print(result)
@@ -145,15 +148,80 @@ def get_last_message():
     # 解析字符串中的数据
     data_start_index = result.find("['")
     data_end_index = result.find("']")
-    
-
     if data_start_index != -1 and data_end_index != -1:
         data_string = result[data_start_index + 2: data_end_index]
-        data_list = data_string.split("', '")
-        
-        # 输出每个元素
+        data_list = data_string.split("', '")          
         for element in data_list:
+            print("here is element")
+            parts = element.split(', ')
+            time = parts[0][0:-1]
+            print(parts)
+            value1 = float(parts[1])
+            value2 = int(parts[2])
+            value3 = parts[3][1:]
+            #只看最新的
+            tmps = read_data()
+            tmp_time = tmps[-1][0]
+            tmp_time = datetime.strptime(tmp_time, "%Y-%m-%d %H:%M:%S")
+            time = datetime.strptime(time, "%Y-%m-%d %H:%M:%S")
+            print(time)
+            print(tmp_time)
             
+            #开始ISF
+
+            if time >= tmp_time:
+                print("start ISF")
+
+                data_ecg_pre_set = read_data()
+                data_ecg_pre_set = [float(x[1]) for x in data_ecg_pre_set]
+            
+                forecast_data_set = perform_arma_prediction(data_ecg_pre_set)
+                
+                print("Forecast data set is: ")
+                print(forecast_data_set)
+                for y in forecast_data_set:
+                    if isinstance(y, (int, float)):
+                          y = round(y, 3)
+                          
+                # 计算均值
+                data_combined_ecg = forecast_data_set + data_ecg_pre_set
+                print("data_combined_ecg is: "+ str(data_combined_ecg))
+                tmp_len = len(data_combined_ecg)
+                tmp_sum = sum([x for x in data_combined_ecg if isinstance(x, (int, float))])
+                tmp_sum = round(tmp_sum, 3)
+                print("type pf tmp_sum is: " + str(type(tmp_sum)))
+                print("tmp_len is: " + str(tmp_len))
+                print("tmp_sum is: " + str(tmp_sum))
+             
+                if isinstance(tmp_sum, (int, float)):
+                    mean_ecg = round(tmp_sum / tmp_len, 3)
+
+                print(f"The combined average value is: {mean_ecg}")
+                raw_ecg = round((value1 + mean_ecg) - float(5.0),3)
+                print(f"The raw value is: {raw_ecg}")
+                #check hash
+                data_for_hash = str(time) + str(raw_ecg) + str(value2)
+                hash_vaule = hashlib.sha256(data_for_hash.encode()).hexdigest()
+                print(data_for_hash)
+                print(hash_vaule)
+                print(value3)
+                if(hash_vaule == value3):
+                    print("The hash value is correct")
+                    response_data = {
+        			    "ecg": raw_ecg,
+        			    "time": time,
+        			    "pulse": -1
+    			    }
+                    return jsonify(response_data)
+
+                else:
+                    print("The hash value is not correct")
+                    return jsonify({"error": "Hash is not correct"})
+            print("The time is not correct")
+            return jsonify({"error": "Time not correct"})
+            
+			
+'''
             print(element)
             time = element[0:19]
             time = datetime.strptime(time, "%Y-%m-%d %H:%M:%S")
@@ -189,17 +257,18 @@ def get_last_message():
                        pulse = element[29:32]
                 print(pulse)
             
-
+'''
+'''
     response_data = {
-        "ecg": ecg,
+        "ecg": raw_ecg,
         "time": time,
-        "pulse": pulse
+        "pulse": -1
     }
-        # 组织成一个字典
+    '''
 
 
-    return jsonify(response_data)
 
+    
 @app.route("/get_last_valid_pulse")
 def get_last_valid_pulse():
     result = contra.functions.getLastMessage().call()

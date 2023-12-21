@@ -16,9 +16,9 @@ def perform_arma_prediction(data):
     - arma_prediction (list): The predicted values.
     """
     global ARMA_pre
+    ARMA_pre = 0.0
     data = data
 
-    ARMA_pres = []
 
     # Perform ARMA prediction using the pre_interface module
     ARMA_pre, ARMA_pre_inv = pre.interface_pre(data, 3, 15, 1, 20)

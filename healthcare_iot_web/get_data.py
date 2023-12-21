@@ -123,8 +123,7 @@ def get_previous_pulse():
 	print(data.__len__())
 	for i in data:
 		tmp_pulse_data = i[1]
-		print(tmp_pulse_data)
-                
+		print(tmp_pulse_data)       
 		data_pulse.append(int(tmp_pulse_data))
     
 	print(data_pulse.__len__())
@@ -176,26 +175,24 @@ def get_last_message():
                 data_ecg_pre_set = [float(x[1]) for x in data_ecg_pre_set]
             
                 forecast_data_set = perform_arma_prediction(data_ecg_pre_set)
+                forecast_data = round(forecast_data_set[-1],3)
                 
-                print("Forecast data set is: ")
-                print(forecast_data_set)
-                for y in forecast_data_set:
-                    if isinstance(y, (int, float)):
-                          y = round(y, 3)
-                          
+                print("Forecast data set is: " + str(forecast_data_set))
+
                 # 计算均值
-                data_combined_ecg = forecast_data_set + data_ecg_pre_set
-                print("data_combined_ecg is: "+ str(data_combined_ecg))
-                tmp_len = len(data_combined_ecg)
-                tmp_sum = sum([x for x in data_combined_ecg if isinstance(x, (int, float))])
+                #data_combined_ecg = forecast_data + data_ecg_pre_set
+                print("data_combined_ecg is: "+ str(data_ecg_pre_set))
+                tmp_len = len(data_ecg_pre_set)
+                tmp_sum = sum([x for x in data_ecg_pre_set if isinstance(x, (int, float))]) + forecast_data
                 tmp_sum = round(tmp_sum, 3)
+                print("tmp_sum is: " + str(tmp_sum))
                 '''
                 print("type pf tmp_sum is: " + str(type(tmp_sum)))
                 print("tmp_len is: " + str(tmp_len))
                 print("tmp_sum is: " + str(tmp_sum))
              	'''
                 if isinstance(tmp_sum, (int, float)):
-                    mean_ecg = round(tmp_sum / tmp_len, 3)
+                    mean_ecg = round(tmp_sum / (tmp_len + 1), 3)
 
                 print(f"The combined average value is: {mean_ecg}")
                 raw_ecg = round((value1 + mean_ecg) - float(5.0),3)
@@ -244,24 +241,28 @@ def get_last_valid_pulse():
         
         # 输出每个元素
         for element in data_list:
-            
-            print(element)
-            time = element[0:19]
+            print("here is element")
+            parts = element.split(', ')
+            time = parts[0][0:-1]
+            print(parts)
+            value1 = float(parts[1])
+            value2 = int(parts[2])
+            value3 = parts[3][1:]
+            if not value3.isdigit():
+                 pulse = tmp_pulse
+                 return jsonify(pulse)
+                 
+            pulse = int(value2)
             time = datetime.strptime(time, "%Y-%m-%d %H:%M:%S")
             tmps = read_data_pulse()
             tmp_time = tmps[-1][0]
             tmp_pulse = tmps[-1][1]
             tmp_time = datetime.strptime(tmp_time, "%Y-%m-%d %H:%M:%S")
-            
-			#忽略前面的数据，只输出和存的最新数据一样的数据
-            if time == tmp_time:
-                pulse = tmps[-1][1]
-            
+
 			#比存的更新的数据
             if time > tmp_time:
-                tmp = element[29]
-                if (tmp != '-'):
-                    pulse = element[29:32]
+                if (pulse > 50 & pulse < 180):
+                    pulse = element[29:32]    
                     tmp_write_data = element[0:19] + ";" + pulse
                     write_data_pulse(tmp_write_data)
                     print(pulse)

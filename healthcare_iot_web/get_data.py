@@ -189,10 +189,11 @@ def get_last_message():
                 tmp_len = len(data_combined_ecg)
                 tmp_sum = sum([x for x in data_combined_ecg if isinstance(x, (int, float))])
                 tmp_sum = round(tmp_sum, 3)
+                '''
                 print("type pf tmp_sum is: " + str(type(tmp_sum)))
                 print("tmp_len is: " + str(tmp_len))
                 print("tmp_sum is: " + str(tmp_sum))
-             
+             	'''
                 if isinstance(tmp_sum, (int, float)):
                     mean_ecg = round(tmp_sum / tmp_len, 3)
 
@@ -203,21 +204,19 @@ def get_last_message():
                 data_for_hash = str(time) + str(raw_ecg) + str(value2)
                 hash_vaule = hashlib.sha256(data_for_hash.encode()).hexdigest()
                 print(data_for_hash)
-                print(hash_vaule)
-                print(value3)
+
                 if(hash_vaule == value3):
                     print("The hash value is correct")
                     response_data = {
         			    "ecg": raw_ecg,
-        			    "time": time,
-        			    "pulse": -1
+        			    "time": time
     			    }
                     return jsonify(response_data)
 
                 else:
                     print("The hash value is not correct")
                     return jsonify({"error": "Hash is not correct"})
-            print("The time is not correct")
+
             return jsonify({"error": "Time not correct"})
             
 			
@@ -258,17 +257,7 @@ def get_last_message():
                 print(pulse)
             
 '''
-'''
-    response_data = {
-        "ecg": raw_ecg,
-        "time": time,
-        "pulse": -1
-    }
-    '''
-
-
-
-    
+   
 @app.route("/get_last_valid_pulse")
 def get_last_valid_pulse():
     result = contra.functions.getLastMessage().call()

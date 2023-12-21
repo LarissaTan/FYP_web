@@ -169,7 +169,7 @@ def get_last_message():
             
             #开始ISF
 
-            if time >= tmp_time:
+            if time > tmp_time:
                 print("start ISF")
 
                 data_ecg_pre_set = read_data()
@@ -207,6 +207,9 @@ def get_last_message():
 
                 if(hash_vaule == value3):
                     print("The hash value is correct")
+                    tmp_write_data = str(time) + ";" + str(raw_ecg)
+                    write_data(tmp_write_data)
+
                     response_data = {
         			    "ecg": raw_ecg,
         			    "time": time
@@ -216,47 +219,15 @@ def get_last_message():
                 else:
                     print("The hash value is not correct")
                     return jsonify({"error": "Hash is not correct"})
+    tmp_ecg_pre_data = read_data()
+    tmp_ecg_pre_data = tmps[-1][1]
+    tmp_time_pre_data = tmps[-1][0]
+    response_data = {
+		"ecg": tmp_ecg_pre_data,
+		"time": tmp_time_pre_data
+	}
+    return jsonify(response_data)
 
-            return jsonify({"error": "Time not correct"})
-            
-			
-'''
-            print(element)
-            time = element[0:19]
-            time = datetime.strptime(time, "%Y-%m-%d %H:%M:%S")
-            tmps = read_data()
-            tmp_time = tmps[-1][0]
-            tmp_time = datetime.strptime(tmp_time, "%Y-%m-%d %H:%M:%S")
-            
-			#忽略前面的数据，只输出和存的最新数据一样的数据
-            if time == tmp_time:
-                print(time)
-                ecg = element[22:27]
-                print(ecg)
-                tmp = element[29]
-                if (tmp == '-'):
-                        pulse = 'null'
-                else:
-                       pulse = element[29:32]
-                print(pulse)
-            
-			#比存的更新的数据
-            if time > tmp_time:
-                print(time)
-                ecg = element[22:27]
-                print(ecg)
-                tmp_write_data = element[0:19] + ";" + ecg
-                write_data(tmp_write_data)
-                print("i dont why here is working")
-                print(time, "----",tmp_time)
-                tmp = element[29]
-                if (tmp == '-'):
-                        pulse = 'null'
-                else:
-                       pulse = element[29:32]
-                print(pulse)
-            
-'''
    
 @app.route("/get_last_valid_pulse")
 def get_last_valid_pulse():
